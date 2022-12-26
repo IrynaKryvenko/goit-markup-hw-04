@@ -114,6 +114,17 @@ img {
     background-color: var(--title-text-color);
     padding-top: 192px;
     padding-bottom: 192px;
+    max-width: 1440px;
+    height: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: linear-gradient(to right,
+     rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7) ),
+    url("../image/people-office.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 .hero-title {
     margin-right: auto;
@@ -188,6 +199,28 @@ img {
 .work-list .item:not(:last-child),
 .team-list .item:not(:last-child) {
     margin-right: 24px;
+}
+.feature-list .item::before {
+    display: block;
+    content: "";
+    height: 112px;
+    outline: 1px solid red;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: var(--cloud-color);
+}
+.icon-strategy::before {
+    background-image: url(../image/strategy.svg);
+    height: 64px;
+}
+.icon-punctuality::before {
+    background-image: url(../image/punctuality.svg);
+}
+.icon-diligence::before {
+    background-image: url(../image/diligence.svg);
+}
+.icon-technologies::before {
+    background-image: url(../image/technologies.svg);
 }
 .feature-list .item {
     width: 264px;
