@@ -54,6 +54,7 @@ body {
 }
 .link {
     text-decoration: none;
+
 }
 .container {
     width: 1158px;
@@ -81,6 +82,24 @@ img {
 .site-nav .current {
     color: var(--hover);
     text-decoration: none;
+}
+.nav-relative {
+    position: relative;
+}
+.site-nav .current::after {
+    display: inline-block;
+    position:absolute;
+    bottom: 0;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 4px;
+    background-color: var(--social-icon);
+    border-radius: 2px;
+    opacity: 0;
+}
+.site-nav .current:hover::after {
+    opacity: 1;
 }
 .site-nav {
     margin-left: 76px;
@@ -195,7 +214,7 @@ img {
 .work-list,
 .team-list {
     display:flex;
-    flex-wrap: wrap;
+    
 }
 .feature-list .item:not(:last-child),
 .work-list .item:not(:last-child),
@@ -216,7 +235,7 @@ img {
     margin-bottom: 8px;
 }
 .feature-list .item {
-    width: 264px;
+    width: calc((100%-72px)/4);
 }
 .feature-list .title {
     text-align: left;
@@ -245,11 +264,10 @@ img {
     border-radius: 0px 0px 4px 4px;
 }
 .icon-list {
-    padding-left: 16px;
-    padding-right: 16px;
-    padding-top: 8px;
+    margin-top: 8px;
     padding-bottom: 32px;
     display:flex;
+    justify-content: center;
     background-color: var(--pr-white-color);
 }
 .team-social {
@@ -264,7 +282,7 @@ img {
 }
 .team-social:hover,
 .team-social:focus {
-    background-image:var(--social-icon);
+    background-color:var(--social-icon);
 }
 .social-icon {
     width: 16px;
@@ -284,24 +302,25 @@ img {
     height: 56px;
     fill:#8E8F99;
 }
-.customers-icon:hover{
-    fill: var(--social-icon);
-}
 .customers {
-    width: 168px;
-    height: 88px;
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 88px;
     box-sizing: border-box;
-    border: 1px solid #8E8F99;
-    border-radius: 4px;
+    
 }
 .customers:hover {
     border: 1px solid var(--social-icon);
 }
+.customers:hover > .customers-icon {
+    fill: var(--social-icon);
+}
 .customers-list .item.item:not(:last-child) {
     margin-right: 24px;
+}
+.customers-list .item {
+    width: calc((100% - 120px)/6);
 }
 .section-customers {
     padding-top: 130px;
@@ -465,8 +484,11 @@ img {
     margin-bottom: 48px;
    
 }
-.project-list .item:hover,
-.project-list .item:focus {
+.project-link {
+    display: block;
+}
+.project-link:hover,
+.project-link:focus {
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 .project-list .item:nth-last-child(-n+3) {
