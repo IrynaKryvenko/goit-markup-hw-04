@@ -321,6 +321,8 @@ img {
 }
 .customers-list .item {
     width: calc((100% - 120px)/6);
+    border: 1px solid #8E8F99;
+    border-radius: 4px;
 }
 .section-customers {
     padding-top: 130px;
